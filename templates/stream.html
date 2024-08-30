@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Streaming Options
+{% endblock %}
+
+{% block main %}
+<h1 style="color: white;text-align:center;">Streaming Options</h1>
+<div class="mx-auto card text-white bg-dark mb-3 border-dark" style="width: 75%; text-align: center;">
+    <div class="card-body">
+        <img src="{{anime_img}}" alt="{{anime_title}}" class="card-img-top w-75">
+        <h4> {{anime_title}}</h4>
+        <div id="streaming-options"></div>
+       
+
+        <!-- Add more content here as needed -->
+    </div>
+</div>
+
+<script>
+    //basically used google's favicon to get the favicon of famous sites based on the name by jikan api call
+    const streamingOptions = {{ streaming_options | tojson | safe}};
+    const container = document.getElementById('streaming-options');
+
+    for(const[name,url] of Object.entries(streamingOptions)){
+        const link = document.createElement('a');
+        link.href = url;
+        link.target = '_blank';
+        link.style.margin = '0 10px';
+        link.title = name;
+
+        const img = document.createElement('img');
+        img.src = `https://www.google.com/s2/favicons?domain=${new URL(url).hostname}&sz=32`;
+        img.alt = name;
+        img.style.width = '45px';
+        img.style.height = '45px';
+
+        link.appendChild(img);
+        container.appendChild(link);
+    }
+
+</script>
+
+
+
+{% endblock %}

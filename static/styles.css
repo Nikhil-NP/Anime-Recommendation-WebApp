@@ -1,0 +1,126 @@
+body {
+    height: 100%;
+    background-color: #1E1E1E;
+    margin: 0;/*ensuers there is no extra space around body*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {/*the blue box*/
+    background-color: #090240;
+    width: 35%;
+    min-height: 100vh; /*min-height ensures the full height is covered */
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    padding: 0 0;/*takes care of any hidden padding*/
+    border-radius: 0 0 15% 15%; 
+
+}
+
+@media (max-width: 768px) {/*for mobile screens*/
+    .container {
+        width: 100%;
+        min-height: 100vh; /*vw is differnt that vh ,got stuck here for hours for that reason*/
+        display: flex;
+        flex-direction: column;
+    }
+}
+.head {/*the black header  box*/
+    width: 100%; /* Take full width of the mobile-screen */
+    height: 15%; 
+    background-color: black;
+    border: 1px solid grey;
+    
+
+}
+.center{
+  align-content: center;
+  text-align: center;
+  height: 100px;
+  
+  
+ 
+}
+.toppadding{
+     padding-top: 2%;
+}
+
+
+
+.capsule-input {/*the input box*/
+    border: none;
+    height: 60px; 
+    padding: 10px 20px; 
+    border-radius: 50px; 
+    width: 90%; 
+    align-content: center;
+    margin: 0 auto; /* Center the input horizontally */
+    display: block; /* Ensures margin auto works */
+    background-color:rgb(78, 87, 104);
+    font-size: 200%;
+    font-style:italic;
+    font-weight: bold;
+    transition: background-color 0.5s ease;
+  }
+input::placeholder {
+    color: rgb(155, 153, 153);
+    font-weight: bold;
+    text-align: left;
+}
+.capsule-input:hover{
+    background-color: rgb(216, 233, 248);
+}
+
+
+.round-button {/*the "+" icon*/
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Makes the button round */
+    background-color: rgb(155, 153, 153);
+    border: none;
+    color: white;
+    font-size:200%; 
+    display: flex;
+    content: "+";
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease;
+    opacity: 80%;
+}
+.round-button:hover{
+    background-color:black;
+}
+
+.submit-button{
+    background-color: darkgray;
+    width:45%;
+    height: 60px;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 80%;
+}
+.submit-button:hover{
+    background-color: rgb(70, 192, 236);
+    opacity: 80%;
+    transition:background-color 0.10s ease;
+}
+
+
+
+.recom_container {
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}

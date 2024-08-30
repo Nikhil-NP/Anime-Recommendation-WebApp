@@ -1,0 +1,33 @@
+{% extends "layout.html" %}
+
+{% block title %}
+recommendation
+{% endblock %}
+
+{% block main %}
+<h1 style="color: white;text-align:center;">Recommendations</h1>
+    {% if recommendations %}
+    {% for anime in  recommendations %}
+        <div class=" mx-auto card text-white bg-dark mb-3 border-dark" style=" width: 75%; text-align: center;">
+            <img src = "{{ anime.img}}" alt = "{{anime.title}}"  class="card-img-top w-75 mx-auto">
+            <div class="card-body">
+                <h6  class="card-title" style="font-size: larger;"><b>{{ anime.title }}</b> </li>
+                <p style="font-size: 15px;" class="card-text">{{anime.synopsis[:300]}}.....</p>
+                    <p>Status: {{anime.status}}</p>
+                    <p>Episodes : {{anime.episodes}}</p>
+                    <p>Rating : {{anime.score}}</p>
+                </ul>
+                    <a href="{{ url_for('streaming_options',anime_id=anime.id,anime_title=anime.title,anime_img = anime.img) }}" 
+                        class="btn mx-auto  submit-button" 
+                        style="width:40%; height: 45px; color: black;   display: flex; justify-content: center; align-items: center;">
+                        Stream <!--the code kept on breaking hence this long style is important -->
+                    </a>   
+            </div>
+         </div>
+         <br>
+    {% endfor %}
+    {% else %}
+        <p>No common recommendations found.</p>
+    {% endif %}
+
+{% endblock %}

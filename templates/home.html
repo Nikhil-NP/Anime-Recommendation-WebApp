@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block title %}
+home
+{% endblock %}
+
+{% block main %}
+<div style="text-align: center;">
+    <h2 class="toppadding" style="color: white; font-size: 230%; margin-bottom: 0;"><b><i> Enter your favourites:</i></b></h2>
+    <p style="color: darkgray; margin-top: 0;">(enter the <b>correct</b> spelling of the anime titles)</p>
+</div>
+<form action="/" method="post">
+    <div id="input-container" class="toppadding">
+        <input type="text" name="anime[]" class="capsule-input" placeholder="Ex: One Piece" autocomplete="off" autofocus>
+    </div>
+    <div class="d-flex justify-content-center " style="padding-top: 1%;">
+        <button  id = "mybutton" type="button" class="round-button" style="text-align: center;" onclick="newbox()">+</button>
+    </div>
+    <div class="d-flex justify-content-center toppadding">
+        <button class="submit-button"; type ="submit" justify-content-center>Submit</button>
+    </div>
+</form>
+
+<script>
+    function newbox(){
+        var container = document.getElementById('input-container');
+        var previousInput = container.lastElementChild;
+        if(previousInput.value.trim() != ""){//checks if input box  is empty or not 
+            if(container.children.length >=5){
+                var button = document.getElementById("mybutton") //this will hide the button after we reach the limit 
+                button.style.display = "none";
+
+                alert('you can only enter max of 5 titles');
+                return;
+            }
+            //this is where the input box is prepared   
+            var input = document.createElement('input');
+            input.type= 'text';
+            input.name = 'anime[]';
+            input.className = 'capsule-input';
+            input.placeholder = 'Ex:One Peice';
+            input.style.margin = '20px';
+            input.autocomplete = "off";
+            input.autofocus;
+            container.appendChild(input);//this will display the new input box 
+            
+            
+        }
+        else{
+            alert("input something before clicking on this button")
+        }
+            
+        
+    }
+</script>
+
+{% endblock %}

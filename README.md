@@ -1,15 +1,5 @@
 # Anime Recommendation System
 
-date:31/08/2024
-by Nikhil Purohit,India
-my github account: https://github.com/Nikhil-NP
-Edx account username : nikh09
-github link:https://github.com/Nikhil-NP/Anime-Recommendation-System
-
-
-### Video Demo: https://youtu.be/5U3z5quXlsk
-
-
 An Anime Recommendation System that allows users to input anime names, get suggestions based on their input, select a suggestion, and choose a streaming platform to be redirected to its website.
 
 ## Features

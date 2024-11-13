@@ -1,4 +1,4 @@
-# Anime Recommendation System
+# Anime Recommendation WebApp
 
 An Anime Recommendation System that allows users to input anime names, get suggestions based on their input, select a suggestion, and choose a streaming platform to be redirected to its website.
 
@@ -34,7 +34,7 @@ An Anime Recommendation System that allows users to input anime names, get sugge
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/Nikhil-NP/Anime-Recommendation-system
+   git clone https://github.com/Nikhil-NP/Anime-Recommendation-WebApp
 
 2. **Install Dependencies**
 
